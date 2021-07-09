@@ -10,11 +10,11 @@ class account_move(models.Model):
     facture_payee = fields.Boolean(string="Facture Payée ?", default=False, compute="_compute_facture_payee")
 
     
-    @api.depends('payment_state')
+    @api.depends('amount_residual')
     def _compute_facture_payee(self):
         for record in self:
-            state_of_payment = ['paid', 'in_payment']
-            if record.payment_state in state_of_payment:
+            #state_of_payment = ['paid', 'in_payment']
+            if record.amount_residual == 0:
                 record.facture_payee = True
             if record.facture_payee:
                 the_cards_domain = [('contact_id','=',self.partner_id.id)]
