@@ -7,7 +7,7 @@ from odoo import api, fields, models, _
 class account_move(models.Model):
     _inherit = 'account.move'
 
-    def generate_recurring_invoice(self):
+    def action_register_payment(self):
         result = super(account_move, self).action_register_payment()
         state_of_payment = ['paid', 'in_payment']
         if self.payment_state in state_of_payment:
