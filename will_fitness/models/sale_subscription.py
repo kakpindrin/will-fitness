@@ -54,14 +54,27 @@ class sale_subscription(models.Model):
         return result
     
     #THANKS GOD
-    @api.onchange('recurring_next_date')
-    def _onchange_my_recurring_next_date(self):
-        for thist in self:
-            if thist.recurring_next_date:
-                the_cards_domain = [('contact_id','=',thist.partner_id.id)]
-                the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
+    # @api.onchange('recurring_next_date')
+    # def _onchange_my_recurring_next_date(self):
+    #     for thist in self:
+    #         if thist.recurring_next_date:
+    #             the_cards_domain = [('contact_id','=',thist.partner_id.id)]
+    #             the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
 
-                if len(the_all_cards) > 0:
-                    the_all_cards[0].write({
-                        'activation_temp_date': thist.recurring_next_date,
-                })
+    #             if len(the_all_cards) > 0:
+    #                 the_all_cards[0].write({
+    #                     'activation_temp_date': thist.recurring_next_date,
+    #             })
+
+    @api.model
+    def generate_recurring_invoice(self):
+        result = super(sale_subscription, self).generate_recurring_invoice()
+        the_cards_domain = [('contact_id','=',result.partner_id.id)]
+        the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
+
+        if len(the_all_cards) > 0:
+            the_all_cards[0].write({
+            'activation_temp_date': result.recurring_next_date,
+        })
+
+        return result
