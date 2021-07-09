@@ -7,4 +7,3 @@ from . import impression_planning
 from . import classes
 from . import account_move
 from . import sale_subscription
-from . import account_payment_register

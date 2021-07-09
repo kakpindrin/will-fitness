@@ -7,15 +7,14 @@ from odoo import api, fields, models, _
 class account_move(models.Model):
     _inherit = 'account.move'
 
-    @api.onchange('payment_state')
+    @api.onchange('amount_residual')
     def _onchange_my_payment_state(self):
-        for thist in self:
-            state_of_payment = ['paid', 'in_payment']
-            if thist.payment_state in state_of_payment:
-                the_cards_domain = [('contact_id','=',thist.partner_id.id)]
-                the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
+        #state_of_payment = ['paid', 'in_payment']
+        if self.amount_residual == 0:
+            the_cards_domain = [('contact_id','=',self.partner_id.id)]
+            the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
 
-                if len(the_all_cards) > 0:
-                    the_all_cards[0].write({
-                        'deactivate_on': the_all_cards[0].activation_temp_date
-                    })
+            if len(the_all_cards) > 0:
+                the_all_cards[0].sudo().write({
+                    'deactivate_on': the_all_cards[0].activation_temp_date
+                })
