@@ -4,7 +4,7 @@ from random import choice
 from string import digits
 from odoo import api, fields, models, _
 
-class account_payment_register(models.Model):
+class account_payment_register(models.TransientModel):
     _inherit = 'account.payment.register'
 
     #@api.onchange('payment_state')
