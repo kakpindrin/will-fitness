@@ -71,9 +71,9 @@
                                     </t>
                                 </td>
                             </tr>
-                        </table>
+                        <!-- </table>
 
-                        <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                        <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt"> -->
                             <tr style="width:100%;" valign="center">
                                 <th>ABONNEMENT SPORT +</th>
                                 <th>
@@ -191,6 +191,21 @@
                                 <p><br /></p>
                                 <p><br /></p>
                                 <p><br /></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </t>
+
+
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="col-md-6">
+                    <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                        <tr style="width:100%;" valign="center">
+                            <td>
+                                <p><sm><t t-esc="impress.description"/></sm></p>
                             </td>
                         </tr>
                     </table>
