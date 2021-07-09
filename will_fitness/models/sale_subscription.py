@@ -66,7 +66,7 @@ class sale_subscription(models.Model):
     #                     'activation_temp_date': thist.recurring_next_date,
     #             })
 
-    @api.model
+    @api.multi
     def generate_recurring_invoice(self):
         result = super(sale_subscription, self).generate_recurring_invoice()
         the_cards_domain = [('contact_id','=',result.partner_id.id)]
