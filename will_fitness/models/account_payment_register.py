@@ -11,13 +11,13 @@ class account_payment_register(models.TransientModel):
     def action_create_payments(self):
         result = super(account_payment_register, self).action_create_payments()
         #state_of_payment = ['paid', 'in_payment']
-        if self.payment_difference:
-            the_cards_domain = [('contact_id','=',self.partner_id.id)]
-            the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
+        
+        the_cards_domain = [('contact_id','=',self.partner_id.id)]
+        the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
 
-            if len(the_all_cards) > 0:
-                the_all_cards[0].write({
-                    'deactivate_on': the_all_cards[0].activation_temp_date
-                })
+        if len(the_all_cards) > 0:
+            the_all_cards[0].write({
+                'deactivate_on': the_all_cards[0].activation_temp_date
+            })
 
         return result
