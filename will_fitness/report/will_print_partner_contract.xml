@@ -200,11 +200,10 @@
             </div>
         </t>
 
-
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="col-md-6">
-                    <table style="width:100%; font-size:10px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                    <table style="width:100%; font-size:12px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                         <tr style="width:100%;" valign="center">
                             <td>
                                 <p><t t-esc="impress.description"/></p>
