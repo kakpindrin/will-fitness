@@ -52,7 +52,8 @@ class sale_subscription(models.Model):
             self.env['hr.rfid.card'].sudo().create(rfid_card)
 
         return result
-
+    
+    #THANKS GOD
     @api.onchange('recurring_next_date')
     def _onchange_my_recurring_next_date(self):
         if self.recurring_next_date:
