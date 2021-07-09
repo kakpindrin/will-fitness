@@ -19,5 +19,5 @@ class account_move(models.Model):
             })
         result = super(account_move, self).action_register_payment()
         
-
+        #MERCI SEIGNEUR NOTRE DIEU
         return result
