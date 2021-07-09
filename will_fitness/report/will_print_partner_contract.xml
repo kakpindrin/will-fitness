@@ -16,7 +16,7 @@
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="col-md-6">
-                    <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                    <table style="width:100%; font-size:10px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                         <tr style="width:100%;" valign="center">
                             <td>
                                 <p><strong>NOM : </strong><t t-esc="impress.partner_id.name"/></p>
@@ -33,7 +33,7 @@
                     </table>
 
                     <t t-foreach="impress.recurring_invoice_line_ids" t-as="line">
-                        <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                        <table style="width:100%; font-size:10px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                             <tr><td colspan="2"><strong>Formule choisie :</strong></td></tr>
                             <tr style="width:100%;" valign="center">
                                 <th>ABONNEMENT SPORT ACCESS</th>
@@ -126,7 +126,7 @@
                     </t>
 
                     
-                    <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                    <table style="width:100%; font-size:10px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                         <!-- <caption style="align: top;">MODE DE RÈGLEMENT :</caption> -->
                         <tr><td colspan="4"><strong>MODE DE RÈGLEMENT :</strong></td></tr>
                         <tr style="width:100%;" valign="center">
@@ -170,7 +170,7 @@
                         </tr>
                     </table>
 
-                    <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                    <table style="width:100%; font-size:10px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                         <tr style="width:100%;" valign="center">
                             <th colspan="2">
                                 <p>
@@ -204,10 +204,10 @@
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="col-md-6">
-                    <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                    <table style="width:100%; font-size:8px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                         <tr style="width:100%;" valign="center">
                             <td>
-                                <p><sm><t t-esc="impress.description"/></sm></p>
+                                <p><t t-esc="impress.description"/></p>
                             </td>
                         </tr>
                     </table>
