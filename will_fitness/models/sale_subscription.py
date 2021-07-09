@@ -68,7 +68,7 @@ class sale_subscription(models.Model):
 
     def generate_recurring_invoice(self):
         result = super(sale_subscription, self).generate_recurring_invoice()
-        the_cards_domain = [('contact_id','=',result.partner_id.id)]
+        the_cards_domain = [('contact_id','=',self.partner_id.id)]
         the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
 
         if len(the_all_cards) > 0:
