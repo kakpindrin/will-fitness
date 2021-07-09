@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="will_specific_employee_print_coach_planning" model="ir.actions.report">
+        <field name="name">(Spécifique) Print Coach Planning</field>
+        <field name="model">will.fitness.planning</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">will_fitness.report_specific_print_planning_coach</field>
+        <field name="report_file">will_fitness.report_specific_print_planning_coach</field>
+        <field name="print_report_name">'Specific Print Planning - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_will_fitness_planning"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_specific_print_planning_coach_document">
+        <t t-set="impress" t-value="impress.with_context(lang=impress.user_id.partner_id.lang)"/>
+        <t t-set="planning_employee" t-value="[]"/>
+        <t t-foreach="impress.planning_slot_ids" t-as="planning">
+            <t t-if="planning.employee_id">
+                <t t-set="planning_employee" t-value="planning_employee+[planning.employee_id]"/>
+            </t>
+        </t>
+        <t t-foreach="set(planning_employee)" t-as="employee">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="col-md-6">
+                        <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                            <td style="width:100%;" valign="center">
+                                <tr>
+                                    <strong>NOM DU COACH: </strong>
+                                    <t t-esc="employee.name"/>
+                                </tr>
+                                <tr>
+                                    <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt" valign="center">
+                                        <tr>
+                                            <th>Jours</th>
+                                            <th>Début</th>
+                                            <th>Fin</th>
+                                            <th>Discipline</th>
+                                        </tr>
+
+
+                                        <t t-foreach="impress.planning_slot_ids" t-as="planning">
+                                            <t t-if="planning.start_datetime and planning.end_datetime">
+                                                <t t-if="employee.id == planning.employee_id.id">
+                                                    <tr>
+                                                        <td>
+                                                            <strong>
+                                                                <t t-if="planning.start_datetime.strftime('%A') == 'Monday'">
+                                                                    Lundi
+                                                                </t>
+                                                                <t t-if="planning.start_datetime.strftime('%A') == 'Tuesday'">
+                                                                    Mardi
+                                                                </t>
+                                                                <t t-if="planning.start_datetime.strftime('%A') == 'Wednesday'">
+                                                                    Mercredi
+                                                                </t>
+                                                                <t t-if="planning.start_datetime.strftime('%A') == 'Thursday'">
+                                                                    Jeudi
+                                                                </t>
+                                                                <t t-if="planning.start_datetime.strftime('%A') == 'Friday'">
+                                                                    Vendredi
+                                                                </t>
+                                                                <t t-if="planning.start_datetime.strftime('%A') == 'Saturday'">
+                                                                    Samedi
+                                                                </t>
+                                                                <t t-if="planning.start_datetime.strftime('%A') == 'Sunday'">
+                                                                    Dimanche
+                                                                </t>
+                                                            </strong>
+                                                            le <t t-esc="planning.start_datetime.strftime('%d/%m/%Y')"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="planning.start_datetime.strftime('%H:%M')"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="planning.end_datetime.strftime('%H:%M')"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="planning.role_id.name"/>
+                                                            (<span style="font-weight: bold;">Salle:</span> <t t-esc="planning.classe_id.name"/>)
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </t>
+                                        </t>
+                                    </table>
+                                </tr>
+                            </td>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <template id="report_specific_print_planning_coach">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="impress">
+                <t t-call="will_fitness.report_specific_print_planning_coach_document" t-lang="impress.user_id.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

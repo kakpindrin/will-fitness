@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+    <record id="will_fitness_impressions_form" model="ir.ui.view">
+      <field name="name">will.fitness.planning.form</field>
+      <field name="model">will.fitness.planning</field>
+      <field name="arch" type="xml">
+        <form string="planning">
+            <header>
+                <button name="generate_planning_to_impress" string="Générer Planning" states="new" attrs="{'invisible': [('state','!=','new')]}" class="oe_highlight" type="object"/>
+                <button name="%(will_specific_employee_print_coach_planning)d" string="Imprimer Planning" states="generate" attrs="{'invisible': [('state','!=','generate')]}"  class="oe_highlight" type="action"/>
+                <button name="re_do" string="Refaire" states="generate" attrs="{'invisible': [('state','!=','generate')]}" type="object"/>
+                <field name="state" widget="statusbar" statusbar_visible="new,generate" />
+            </header> 
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <group>
+                        <field name="debut"/>
+                    </group>
+                    <group>
+                        <field name="fin"/>
+                    </group>
+                    <field name="planning_slot_ids"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="will_fitness.impressions_view_tree" model="ir.ui.view">
+      <field name="name">will.fitness.planning.tree</field>
+      <field name="model">will.fitness.planning</field>
+      <field name="arch" type="xml">
+        <tree string="La liste des impressions">
+            <field name="name"/>
+            <field name="debut"/>
+            <field name="fin"/>
+        </tree>
+      </field>
+    </record>
+    <record id="action_impressions_window" model="ir.actions.act_window">
+        <field name="name">Impressions</field>
+        <field name="res_model">will.fitness.planning</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Impressions" id="will_fitness.impressions" parent="will_fitness.impression" action="will_fitness.action_impressions_window"/>
+  </data>
+</odoo>
