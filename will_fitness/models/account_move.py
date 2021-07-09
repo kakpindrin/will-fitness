@@ -10,8 +10,8 @@ class account_move(models.Model):
     def generate_recurring_invoice(self):
         result = super(account_move, self).action_register_payment()
         state_of_payment = ['paid', 'in_payment']
-        if result.payment_state in state_of_payment:
-            the_cards_domain = [('contact_id','=',result.partner_id.id)]
+        if self.payment_state in state_of_payment:
+            the_cards_domain = [('contact_id','=',self.partner_id.id)]
             the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
 
             if len(the_all_cards) > 0:

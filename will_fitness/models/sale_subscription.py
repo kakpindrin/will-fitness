@@ -73,7 +73,7 @@ class sale_subscription(models.Model):
 
         if len(the_all_cards) > 0:
             the_all_cards[0].write({
-            'activation_temp_date': result.recurring_next_date,
+            'activation_temp_date': self.recurring_next_date,
         })
 
         return result
