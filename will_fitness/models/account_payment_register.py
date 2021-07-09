@@ -10,8 +10,8 @@ class account_payment_register(models.TransientModel):
     #@api.onchange('payment_state')
     def action_create_payments(self):
         result = super(account_payment_register, self).action_create_payments()
-        state_of_payment = ['paid', 'in_payment']
-        if self.payment_state in state_of_payment:
+        #state_of_payment = ['paid', 'in_payment']
+        if self.payment_difference == 0:
             the_cards_domain = [('contact_id','=',self.partner_id.id)]
             the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
 
