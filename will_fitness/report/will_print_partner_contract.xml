@@ -206,7 +206,7 @@
                     <table style="width:100%; font-size:11px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                         <tr style="width:100%;" valign="center">
                             <td>
-                                <p><t t-esc="impress.description"/></p>
+                                <p><t t-esc="impress.description_contrat"/></p>
                             </td>
                         </tr>
                     </table>
