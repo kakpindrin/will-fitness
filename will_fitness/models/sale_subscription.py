@@ -13,6 +13,8 @@ class sale_subscription(models.Model):
                                                          ('virement','VIREMENT'),
                                                          ('cheque','CHÈQUE')], default="especes",)
     
+    description_contrat = fields.Text(string='Description Contrat')
+    
     #THINK GOOD
     @api.model
     def create(self, values):
