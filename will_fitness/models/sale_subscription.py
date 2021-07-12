@@ -14,7 +14,7 @@ class sale_subscription(models.Model):
                                                          ('cheque','CHÈQUE')], default="especes",)
     
     #New field
-    description_contrat = fields.Html(string="Description Contrat")
+    description_contrat = fields.Text(string='Description Contrat')
     
     #THINK GOOD
     @api.model
