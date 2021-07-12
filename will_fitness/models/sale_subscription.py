@@ -13,6 +13,7 @@ class sale_subscription(models.Model):
                                                          ('virement','VIREMENT'),
                                                          ('cheque','CHÈQUE')], default="especes",)
     
+    #New field
     description_contrat = fields.Text(string='Description Contrat')
     
     #THINK GOOD
