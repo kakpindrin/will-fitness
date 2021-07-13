@@ -27,12 +27,12 @@ class res_partner(models.Model):
         ('barcode_uniq', 'unique (barcode)', "Le Badge ID doit être unique, celui-ci est déjà attribué à un autre partenaire."),
     ]
 
-    @api.onchange('subscription_ids')
-    def onchange_field(self):
-        if len(self.subscription_ids) > 0:
-            self.write({
-                'subscription_state': True
-            }) 
+    # @api.onchange('subscription_ids')
+    # def onchange_field(self):
+    #     if len(self.subscription_ids) > 0:
+    #         self.write({
+    #             'subscription_state': True
+    #         }) 
     
 
     #THINK GOOD
