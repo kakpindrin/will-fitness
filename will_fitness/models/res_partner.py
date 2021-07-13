@@ -18,12 +18,22 @@ class res_partner(models.Model):
 
     subscription_ids = fields.One2many('sale.subscription', 'partner_id', string='Abonnements du Contact')
 
+    subscription_state = fields.Boolean(default=False)
+
     #barcode = fields.Char(string="Badge ID", help="ID used for partner identification.", groups="hr.group_hr_user", copy=False)
     barcode = fields.Char(string="Badge ID", help="ID used for partner identification.", groups="hr.group_hr_user", copy=False)
 
     _sql_constraints = [
         ('barcode_uniq', 'unique (barcode)', "Le Badge ID doit être unique, celui-ci est déjà attribué à un autre partenaire."),
     ]
+
+    @api.onchange('subscription_ids')
+    def onchange_field(self):
+        if len(self.subscription_ids) > 0:
+            self.write({
+                'subscription_state': True
+            }) 
+    
 
     #THINK GOOD
     def generate_random_barcode(self):

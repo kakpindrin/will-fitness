@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet" position="before">
                 <header>
-                    <button name="%(will_print_contract)d" string="Imprimer Contrat" states="draft" attrs="{'invisible': [('stage_category','=','draft')]}"  class="oe_highlight" type="action"/>
+                    <button name="%(will_print_contract)d" string="Imprimer Contrat" states="draft" attrs="{'invisible': [('subscription_state','=',false)]}"  class="oe_highlight" type="action"/>
                 </header>
             </xpath>
             <field name="function" position="before">
@@ -19,6 +19,7 @@
                 <field name="taille" attrs="{'invisible': [('company_type','!=','person')]}"/>
                 <field name="antecedent_medical" attrs="{'invisible': [('company_type','!=','person')]}"/>
                 <field name="contact_urgence" attrs="{'invisible': [('company_type','!=','person')]}"/>
+                <field name="subscription_state" invisible="1"/>
             </field>
             <notebook>
                 <page string="Badge">
