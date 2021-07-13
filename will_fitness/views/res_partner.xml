@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet" position="before">
                 <header>
-                    <button name="%(will_print_contract)d" string="Imprimer Contrat" states="draft" attrs="{'invisible': [('subscription_state','=',false)]}"  class="oe_highlight" type="action"/>
+                    <button name="%(will_print_contract)d" string="Imprimer Contrat" states="draft" attrs="{'invisible': [('subscription_state','=',False)]}"  class="oe_highlight" type="action"/>
                 </header>
             </xpath>
             <field name="function" position="before">
