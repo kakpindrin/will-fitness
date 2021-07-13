@@ -16,6 +16,8 @@ class res_partner(models.Model):
     antecedent_medical = fields.Text(string='Antécédent médical')
     contact_urgence = fields.Char(string='Contact Urgence')
 
+    subscription_ids = fields.One2many('sale.subscription', 'partner_id', string='Abonnements du Contact')
+
     #barcode = fields.Char(string="Badge ID", help="ID used for partner identification.", groups="hr.group_hr_user", copy=False)
     barcode = fields.Char(string="Badge ID", help="ID used for partner identification.", groups="hr.group_hr_user", copy=False)
 

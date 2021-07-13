@@ -34,6 +34,7 @@
         'report/will_next_week_print_coach_planning.xml',
         'report/will_specific_print_coach_planning.xml',
         'report/will_print_partner_contract.xml',
+        'report/will_print_contract.xml',
         'report/res_partner_badge.xml',
         'data/ir_sequence_data.xml',
         'views/menu.xml',
