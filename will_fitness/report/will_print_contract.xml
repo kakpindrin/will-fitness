@@ -7,7 +7,7 @@
         <field name="report_name">will_fitness.report_print_contract</field>
         <field name="report_file">will_fitness.report_print_contract</field>
         <field name="print_report_name">'Print Partner Contract - %s' % (object.name).replace('/', '')</field>
-        <field name="binding_model_id" ref="model_sale_subscription"/>
+        <field name="binding_model_id" ref="model_res_partner"/>
         <field name="binding_type">report</field>
     </record>
 
