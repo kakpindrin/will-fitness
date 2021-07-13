@@ -203,7 +203,7 @@
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="col-md-6">
-                    <table style="width:100%; font-size:11px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                    <table style="width:100%; font-size:10px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
                         <tr style="width:100%;" valign="center">
                             <td>
                                 <p>Conditions générales de vente Will Fitness <br /></p>
@@ -229,10 +229,7 @@
                                 <p>2.3 Horaires d’ouverture <br />
                                     Les horaires d’ouverture sont portés à la connaissance de l’Abonné(e) au moment de la souscription du Contrat. Les éventuelles modifications sont portées à la connaissance de l’Abonné(e) (notamment en cas de fermeture pendant travaux, cas de force majeure, etc.). <br />
                                 </p>
-                                <p>2.3 Horaires d’ouverture <br />
-                                    Les horaires d’ouverture sont portés à la connaissance de l’Abonné(e) au moment de la souscription du Contrat. Les éventuelles modifications sont portées à la connaissance de l’Abonné(e) (notamment en cas de fermeture pendant travaux, cas de force majeure, etc.). <br />
-                                </p>
-                                <p>2.3 Conduite de l’Abonné(e) <br />
+                                <p>2.4 Conduite de l’Abonné(e) <br />
                                     L’Abonné(e) s’engage à adopter en toutes circonstances une attitude et une tenue correcte à l’égard de tous et à établir des relations basées sur le respect d’autrui (tel que défini au Règlement Intérieur). L’Abonné(e) devra disposer d’une tenue adaptée à l’exercice d’une activité sportive ; il/elle devra toujours être muni de chaussures de sport propres et d’une serviette destinée à se préserver du contact direct avec les appareils. <br />
                                     L’Abonné(e) doit veiller à s’organiser pendant ses séances d’entraînement afin d’éviter de gêner et de perturber les autres Abonné(e)s (voir Règlement Intérieur). Il n’est pas permis à l’Abonné(e) de réserver une installation ou un équipement sportif, notamment en déposant ses affaires dessus. <br />
                                 </p>
