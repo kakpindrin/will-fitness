@@ -18,7 +18,7 @@ class res_partner(models.Model):
 
     subscription_ids = fields.One2many('sale.subscription', 'partner_id', string='Abonnements du Contact')
 
-    subscription_state = fields.Boolean(default=False)
+    #subscription_state = fields.Boolean(string="État Abonnement", default=False)
 
     #barcode = fields.Char(string="Badge ID", help="ID used for partner identification.", groups="hr.group_hr_user", copy=False)
     barcode = fields.Char(string="Badge ID", help="ID used for partner identification.", groups="hr.group_hr_user", copy=False)
