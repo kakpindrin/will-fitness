@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="will_print_contract" model="ir.actions.report">
+        <field name="name">(Contrat) Imprimer Contrat</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">will_fitness.report_print_contract</field>
+        <field name="report_file">will_fitness.report_print_contract</field>
+        <field name="print_report_name">'Print Partner Contract - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_sale_subscription"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_print_contract_document">
+        <t t-set="impress" t-value="impress.with_context(lang=impress.lang)"/>
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="col-md-6">
+                    <table style="width:100%; font-size:13px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                        <tr style="width:100%;" valign="center">
+                            <td>
+                                <p><strong>NOM : </strong><t t-esc="impress.name"/></p>
+                                <p><strong>DATE DE NAISSANCE : </strong><t t-esc="impress.date_naissance"/></p>
+                                <p><strong>TÉLÉPHONE : </strong><t t-esc="impress.phone"/></p>
+                                <p><strong>CNI/Pass./C.C : </strong><t t-esc="impress.carte_identite"/></p>
+                            </td>
+                            <td>
+                                <p><strong>PRÉNOM : </strong><t t-esc="impress.prenom"/></p>
+                                <p><strong>ADRESSE : </strong><t t-esc="impress.adresse_postale"/></p>
+                                <p><strong>EMAIL : </strong><t t-esc="impress.email"/></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <t t-if="impress.subscription_ids">
+                        <t t-foreach="impress.subscription_ids" t-as="subscription">
+                            
+                            <t t-foreach="subscription.recurring_invoice_line_ids" t-as="line">
+                                <table style="width:100%; font-size:12px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                                    <tr><td colspan="2"><strong>Formule choisie :</strong></td></tr>
+                                    <tr style="width:100%;" valign="center">
+                                        <th>ABONNEMENT SPORT ACCESS</th>
+                                        <th>ACCÈS ILLIMITÉ AUX ESPACES : <br /> FITNESS - MUSCULATION - CARDIO TRAINING</th>
+                                    </tr>
+                                    <tr style="width:100%;" valign="center">
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'ASAM' ">
+                                                <p><input type="checkbox" id="asam" checked="true" /> <label for="asam">MENSUEL 50 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASAM' ">
+                                                <p><input type="checkbox" id="asam" /> <label for="asam">MENSUEL 50 000 F CFA</label></p>
+                                            </t>
+
+                                            <t t-if="line.product_id.default_code == 'ASAS' ">
+                                                <p><input type="checkbox" id="asas" checked="true" /> <label for="asas">SEMESTRIEL 280 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASAS' ">
+                                                <p><input type="checkbox" id="asas" /> <label for="asas">SEMESTRIEL 280 000 F CFA</label></p>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'ASAT' ">
+                                                <p><input type="checkbox" id="asat" checked="true" /> <label for="asat">TRIMESTRIEL 140 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASAT' ">
+                                                <p><input type="checkbox" id="asat" /> <label for="asat">TRIMESTRIEL 140 000 F CFA</label></p>
+                                            </t>
+
+                                            <t t-if="line.product_id.default_code == 'ASAA' ">
+                                                <p><input type="checkbox" id="asaa" checked="true" /> <label for="asaa">ANNUEL 500 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASAA' ">
+                                                <p><input type="checkbox" id="asaa" /> <label for="asaa">ANNUEL 500 000 F CFA</label></p>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                <!-- </table>
+
+                                <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt"> -->
+                                    <tr style="width:100%;" valign="center">
+                                        <th>ABONNEMENT SPORT +</th>
+                                        <th>
+                                            <p>ACCÈS ILLIMITÉ AUX ESPACES : <br /> FITNESS - MUSCULATION - CARDIO TRAINING</p>
+                                            <p>
+                                                <ul>
+                                                    <li>1 ACCÈS SPA / MOIS</li>
+                                                    <li>1 COACHING PRIVÉ / SEMAINE</li>
+                                                    <li>1 BILAN INBODY / MOIS</li>
+                                                    <li>1 BOUTEILLE D'EAU / ACCÈS</li>
+                                                    <li>1 SERVIETTE OFFERTE</li>
+                                                    <li>1 TEE-SHIRT OFFERT</li>
+                                                </ul>
+                                            </p>
+                                        </th>
+                                    </tr>
+                                    <tr style="width:100%;" valign="center">
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'ASPM' ">
+                                                <p><input type="checkbox" id="aspm" checked="true" /> <label for="aspm">MENSUEL 130 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASPM' ">
+                                                <p><input type="checkbox" id="aspm" /> <label for="aspm">MENSUEL 130 000 F CFA</label></p>
+                                            </t>
+                                            
+                                            <t t-if="line.product_id.default_code == 'ASPT' ">
+                                                <p><input type="checkbox" id="aspt" checked="true" /> <label for="aspt">TRIMESTRIEL 350 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASPT' ">
+                                                <p><input type="checkbox" id="aspt" /> <label for="aspt">TRIMESTRIEL 350 000 F CFA</label></p>
+                                            </t>
+
+                                            <t t-if="line.product_id.default_code == 'ASPS' ">
+                                                <p><input type="checkbox" id="asps" checked="true" /> <label for="asps">SEMESTRIEL 700 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASPS' ">
+                                                <p><input type="checkbox" id="asps" /> <label for="asps">SEMESTRIEL 700 000 F CFA</label></p>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'ASPA' ">
+                                                <p><input type="checkbox" id="aspa" checked="true" /> <label for="aspa">ANNUEL 1 300 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ASPA' ">
+                                                <p><input type="checkbox" id="aspa" /> <label for="aspa">ANNUEL 1 300 000 F CFA</label></p>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+
+
+
+
+
+
+                            <table style="width:100%; font-size:12px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                                <!-- <caption style="align: top;">MODE DE RÈGLEMENT :</caption> -->
+                                <tr><td colspan="4"><strong>MODE DE RÈGLEMENT :</strong></td></tr>
+                                <tr style="width:100%;" valign="center">
+                                    <td>
+                                        <t t-if="subscription.mode_reglement == 'especes' ">
+                                            <input type="checkbox" id="especes" checked="true" /> <label for="especes">ESPÈCES </label>
+                                        </t>
+                                        <t t-elif="subscription.mode_reglement != 'especes'">
+                                            <input type="checkbox" id="especes" /> <label for="especes">ESPÈCES </label>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="subscription.mode_reglement == 'cartebancaire' ">
+                                            <input type="checkbox" id="cartebancaire" checked="true" /> <label for="cartebancaire">CARTE BANCAIRE</label>
+                                        </t>
+                                        <t t-elif="subscription.mode_reglement != 'cartebancaire'">
+                                            <input type="checkbox" id="cartebancaire" /> <label for="cartebancaire">CARTE BANCAIRE</label>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="subscription.mode_reglement == 'virement' ">
+                                            <input type="checkbox" id="virement" checked="true" /> <label for="virement">VIREMENT <sm>(à partir d'un abonnement de 3 mois)</sm> </label>
+                                        </t>
+                                        <t t-elif="subscription.mode_reglement != 'virement'">
+                                            <input type="checkbox" id="virement" /> <label for="virement">VIREMENT <sm>(à partir d'un abonnement de 3 mois)</sm> </label>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="subscription.mode_reglement == 'cheque'">
+                                            <input type="checkbox" id="cheque" checked="true" /> <label for="cheque">CHÈQUE <sm>(à l'ordre de WILL FITNESS)</sm></label>
+                                        </t>
+                                        <t t-elif="subscription.mode_reglement != 'cheque'">
+                                            <input type="checkbox" id="cheque" /> <label for="cheque">CHÈQUE <sm>(à l'ordre de WILL FITNESS)</sm></label>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr style="width:100%;" valign="center">
+                                    <td colspan="4">
+                                        <em>NB: En cas de paiement partiel, le client est invité à la solde sur une durée d'un mois à compter de la date du premier paiement.</em>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+
+
+
+
+
+
+                            <table style="width:100%; font-size:13px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                                <tr style="width:100%;" valign="center">
+                                    <th colspan="2">
+                                        <p>
+                                            <strong>
+                                                En signant ce formulaire, j'accepte les conditions générales de vente et le règlement intérieur du club Will Fitness. <br />
+                                                Ce formulaire est valable pour tout renouvellement d'abonnement.
+                                            </strong>
+                                        </p>
+                                    </th>
+                                </tr>
+                                <tr style="width:100%;" valign="center">
+                                    <td>
+                                        <p><strong>SIGNATURE CLIENT :</strong></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                    </td>
+                                    <td>
+                                        <p><strong>DATE :</strong></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                    </t>
+
+                </div>
+            </div>
+        </t>
+
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="col-md-6">
+                    <table style="width:100%; font-size:10px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt">
+                        <tr style="width:100%;" valign="center">
+                            <td>
+                                <p>Conditions générales de vente Will Fitness <br /></p>
+                                <p>1. OBJET <br />
+                                    Après avoir pris connaissance des prestations proposées par WILL FITNESS (ci-après le « Club), l’abonné(e) (ci-après l’ « Abonné(e) ») déclare souscrire un contrat d’abonnement WILL FITNESS nominatif et incessible, l’autorisant à utiliser les installations en libre-service avec accès illimité dans la limite des horaires d’ouverture, dans le cadre du forfait choisi par l’abonné parmi : cardio-training, musculation libre, coaching, spa et cours collectif et selon un prix et des modalités financières indiqués au contrat. <br />
+                                    Les présentes conditions générales de vente (ci-après « CGV ») et le règlement intérieur (ci-après désigné le « Règlement Intérieur ») dont un exemplaire a été remis à l’Abonné(e) lors de la souscription, qui déclare les accepter et d’éventuelles conditions particulières constituent le contrat (ci-après le « Contrat ») qui forme le cadre exclusif des relations juridiques entre l’Abonné(e) et WILL FITNESS. <br />
+                                    En dehors du forfait de base, le club WILL FITNESS, peut proposer à l’Abonné(e) de souscrire à des activités annexes ou complémentaires optionnelles. Les différentes formules et conditions tarifaires de ces activités optionnelles seront soumises à l’accord préalable de l’Abonné(e). <br />
+                                </p>
+                                <p>2. CONDITIONS D’ACCÈS <br />
+                                    2.1 Carte d’accès <br />
+                                    Après la signature du Contrat, une carte d’accès est remise à l’Abonné(e). Cette dernière est (intuitu personae) obligatoire, nominative et incessible.
+                                    Chaque Abonné(e) a l’obligation de présenter sa carte au lecteur pour accéder à WILL FITNESS, même si les portes d’accès sont ouvertes. <br />
+                                    La non-présentation de la carte peut priver l’Abonné(e) du droit d’entrée. La présentation de la carte peut être sollicitée par le responsable en service à tout moment dès lors que l’Abonné se trouve dans les locaux du Club. <br />
+                                    Par ailleurs, l’accès pourra être refusé à l’Abonné si, au moment où il se présente, les limites des conditions d’exploitation de la salle, qui sont affichées à l’accueil de la salle de sport sont atteintes. <br />
+                                    Une telle circonstance, par nature exceptionnelle, ne pourra ouvrir droit à une réduction du prix de son abonnement. Les Abonné(e)s s’engagent à respecter le Règlement Intérieur de la salle de sport dont la dernière version est affichée à l’accueil. Le Règlement Intérieur est remis à l’Abonné(e) lors de la signature du Contrat. L’Abonné(e) s’engage à y adhérer sans restriction, ni réserve et accepte d’en respecter scrupuleusement les consignes ; <br />
+                                    La perte ou le vol de la carte d’accès nominative entraîne le paiement par l’Abonné(e) de la somme de 25 000 FCFA (Vingt cinq mille francs CFA) correspondant au coût du traitement informatique et qui est offert à l’inscription initiale. <br />
+                                    WILL FITNESS prendra en charge le changement de carte à ses frais en cas de dysfonctionnement qui ne serait pas dû à une détérioration de la carte par l’Abonné(e). <br />
+                                </p>
+                                <p>2.2 Client mineur <br />
+                                    Le mineur de plus de 16 ans qui souhaiterait s’abonner devra être accompagné d’un responsable légal. Ces deux derniers signeront le Contrat d’abonnement qui est composé des CGV et du Règlement Intérieur et d’éventuelles conditions particulières. Le responsable légal réglera en son nom et pour le compte du mineur l’abonnement de celui-ci. <br />
+                                    Les mineurs ne seront acceptés qu’après signature de l’autorisation parentale à l’utilisation des installations sportives et au suivi des cours dispensés au sein du Club. <br />
+                                </p>
+                                <p>2.3 Horaires d’ouverture <br />
+                                    Les horaires d’ouverture sont portés à la connaissance de l’Abonné(e) au moment de la souscription du Contrat. Les éventuelles modifications sont portées à la connaissance de l’Abonné(e) (notamment en cas de fermeture pendant travaux, cas de force majeure, etc.). <br />
+                                </p>
+                                <p>2.4 Conduite de l’Abonné(e) <br />
+                                    L’Abonné(e) s’engage à adopter en toutes circonstances une attitude et une tenue correcte à l’égard de tous et à établir des relations basées sur le respect d’autrui (tel que défini au Règlement Intérieur). L’Abonné(e) devra disposer d’une tenue adaptée à l’exercice d’une activité sportive ; il/elle devra toujours être muni de chaussures de sport propres et d’une serviette destinée à se préserver du contact direct avec les appareils. <br />
+                                    L’Abonné(e) doit veiller à s’organiser pendant ses séances d’entraînement afin d’éviter de gêner et de perturber les autres Abonné(e)s (voir Règlement Intérieur). Il n’est pas permis à l’Abonné(e) de réserver une installation ou un équipement sportif, notamment en déposant ses affaires dessus. <br />
+                                </p>
+                                <p>3. CERTIFICAT MÉDICAL <br />
+                                    L’Abonné(e) déclare sur l’honneur que son état de santé lui permet de pratiquer des activités proposées par le Club et plus particulièrement d’utiliser librement les services, matériels et installations après avoir pris connaissance préalablement à leur utilisation des consignes de sécurité, d’hygiène et d’utilisation dédiées à chaque espace et à chaque installation.
+                                    En tout état de cause, il déclare qu’il ne souffre d’aucune maladie, notamment cardiaque ou respiratoire, blessure, ou inaptitude physique de nature à l’empêcher de pratiquer les activités et services objets du Contrat. <br />
+                                    Il appartient à l’Abonné dont l’état de santé n’est pas compatible avec la pratique sportive ou avec les pratiques sportives collectives (notamment en raison de maladies contagieuses) de s’abstenir de toute venue dans le Club. <br />
+                                    L’Abonné(e) déclare et reconnaît avoir été informé(e) que le risque d’accident est indissociable de la notion de sport et connaître ainsi les éventuels risques liés à la pratique des activités sportives du Club WILL FITNESS, pour lui-même et pour tout autre adhérent. En signant de sa propre volonté ces CGV, l’Abonné(e) décharge intégralement de responsabilité le Club et se désiste de son droit légal de recouvrer d’éventuels dommages dans le cas d’un préjudice de quelque nature que ce soit. En outre, l’Abonné(e) consent que ce dernier, son conjoint (concubin, pacsé ou marié), ses cessionnaires, héritiers, tuteurs et représentants juridiques ne porteront aucune plainte, n’intenteront aucun procès ou ne tiendront pas le Club ou ses gérants pour responsables de toutes pertes ou préjudices résultant de la participation à l’utilisation des services, matériels et installations du Club. <br />
+                                </p>
+                                <p>4. RÈGLEMENT INTÉRIEUR <br />
+                                    L’Abonné(e) déclare avoir pris connaissance du Règlement Intérieur affiché au Club et remis à la signature du Contrat. L’Abonné(e), par la signature des présentes CGV s’engage à respecter scrupuleusement le Règlement Intérieur dont il a reçu un exemplaire ainsi que ses modifications éventuelles, la dernière version du Règlement Intérieur étant systématiquement affichée au sein du Club il s’agit de la version contraignante pour l’Abonné(e) qui s’engage à le respecter scrupuleusement. <br />
+                                    Il est rappelé l’interdiction de fumer dans l’ensemble des locaux du Club. <br />
+                                </p>
+                                <p>5. VESTIAIRE ET DÉPÔT <br />
+                                    L’Abonné(e) a l’obligation d’utiliser des casiers individuels dont l’utilisation est limitée à la durée de la séance. <br />
+                                    En cas d’utilisation par l’Abonné(e) d’un casier individuel à fermeture traditionnelle, l’Abonné(e) a l’obligation de se pourvoir d’un cadenas afin de pouvoir le fermer. Le casier utilisé par l’Abonné(e) est considéré comme un prêt gracieux le temps de la séance. Il est strictement interdit de laisser ses affaires personnelles à l’intérieur des casiers après avoir quitté le Club. La conservation des effets personnels n’est en aucun cas garantie par le Club au-delà de quarante-huit (48) heures. <br />
+                                    Il est rappelé expressément à l’Abonné(e) que les vestiaires ne font l’objet d’aucune surveillance spécifique ; il est donc recommandé de ne pas y entreposer des objets de valeur et le Club ne pourra être tenu pour responsable des objets déposés aux vestiaires et aux différents casiers du Club ou laissés sans surveillance. <br />
+                                </p>
+                                <p>6. CLAUSE RÉSOLUTOIRE : <br />
+                                    Faute par le débiteur défaillant de s’acquitter immédiatement des sommes dues, l’abonnement se trouvera résolu de plein droit si l’Abonné(e) ne régularise pas sa situation à la première mise en demeure adressée par le Club. <br />
+                                </p>
+                                <p>7. DIFFÉRENDS – CLAUSE ATTRIBUTIVE DE JURIDICTION – DROIT APPLICABLE <br />
+                                    A défaut d’accord amiable, le Tribunal de Première Instance d’Abidjan est compétent pour connaître de tous litiges relevant de l’interprétation, de l’exécution, de la résiliation du Contrat. <br />
+                                    Le Contrat est régi par le droit applicable en République de Côte d’Ivoire. <br />
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="report_print_contract">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="impress">
+                <t t-call="will_fitness.report_print_contract_document" t-lang="impress.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>
