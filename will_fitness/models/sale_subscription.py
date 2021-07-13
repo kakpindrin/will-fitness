@@ -14,7 +14,7 @@ class sale_subscription(models.Model):
                                                          ('cheque','CHÈQUE')], default="especes",)
     
     #New field
-    description_contrat = fields.Text(string='Description Contrat')
+    #description_contrat = fields.Text(string='Description Contrat')
     
     #THINK GOOD
     @api.model
@@ -53,10 +53,10 @@ class sale_subscription(models.Model):
                 'deactivate_on': result.date_start,
                 })
             self.env['hr.rfid.card'].sudo().create(rfid_card)
-        result.write({
-            'description_contrat': result.description,
-            'description': False
-        })
+        # result.write({
+        #     'description_contrat': result.description,
+        #     'description': False
+        # })
 
         return result
     

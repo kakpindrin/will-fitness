@@ -13,9 +13,9 @@
                 <field name="mode_reglement" />
             </field>
 
-            <field name="description" position="before">
+            <!-- <field name="description" position="before">
                 <field name="description_contrat" />
-            </field>
+            </field> -->
         </field>
     </record>
 
