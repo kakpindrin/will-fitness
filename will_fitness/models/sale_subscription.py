@@ -13,22 +13,31 @@ class sale_subscription(models.Model):
                                                          ('virement','VIREMENT'),
                                                          ('cheque','CHÈQUE')], default="especes",)
     
-    # date_start = fields.Date(string='Date de début', default=lambda self: self._get_default_date())
+    date_start = fields.Date(string='Date de début', default=fields.Date.today())
 
     # @api.model
-    # def _get_default_date(self):
-    #     now = datetime.now()
-    #     today = now.date()
-    #     la_date = now.strftime("%m/%d/%Y")
+    def start_subscription(self):
+        result = super(sale_subscription, self).start_subscription()
+        now = datetime.now()
+        today = now.date()
+        #la_date = now.strftime("%m/%d/%Y")
 
-    #     debut_date = "01/08/2021"
-    #     begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
-    #     ma_date = begin_date.strftime("%m/%d/%Y")
+        debut_date = "01/08/2021"
+        begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
 
-    #     if today <= begin_date:
-    #         return begin_date
-    #     else:
-    #         return today
+        if today < begin_date:
+            self.write({
+                'recurring_next_date': begin_date
+            })
+        
+        return result
+
+        # ma_date = begin_date.strftime("%m/%d/%Y")
+
+        # if today <= begin_date:
+        #     return begin_date
+        # else:
+        #     return today
 
     
     #New field
@@ -96,19 +105,19 @@ class sale_subscription(models.Model):
         the_cards_domain = [('contact_id','=',self.partner_id.id)]
         the_all_cards = self.env['hr.rfid.card'].search(the_cards_domain, order='id desc')
 
-        now = datetime.now()
-        today = now.date()
+        # now = datetime.now()
+        # today = now.date()
         
-        debut_date = "01/08/2021"
-        begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
-        
-        la_faveur = 0
-        if today < begin_date:
-            la_faveur = begin_date - today
+        # debut_date = "01/08/2021"
+        # begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
 
-        self.write({
-            'recurring_next_date': self.recurring_next_date + la_faveur
-        })
+        # la_faveur = 0
+        # if today < begin_date:
+        #     la_faveur = begin_date - today
+
+        # self.write({
+        #     'recurring_next_date': self.recurring_next_date + la_faveur
+        # })
         #ma_date = begin_date.strftime("%m/%d/%Y")
 
         if len(the_all_cards) > 0:
