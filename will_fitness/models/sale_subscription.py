@@ -13,6 +13,23 @@ class sale_subscription(models.Model):
                                                          ('virement','VIREMENT'),
                                                          ('cheque','CHÈQUE')], default="especes",)
     
+    date_start = fields.Date(string='Date de début', default=lambda self: self._get_default_date())
+
+    @api.model
+    def _get_default_date(self):
+        now = datetime.now()
+        today = now.date()
+        la_date = now.strftime("%m/%d/%Y")
+
+        debut_date = "01/08/2021"
+        begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
+
+        if today <= begin_date:
+            return debut_date
+        else:
+            return la_date
+
+    
     #New field
     #description_contrat = fields.Text(string='Description Contrat')
     
