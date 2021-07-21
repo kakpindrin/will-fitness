@@ -26,9 +26,9 @@ class sale_subscription(models.Model):
         ma_date = begin_date.strftime("%m/%d/%Y")
 
         if today <= begin_date:
-            return ma_date
+            return begin_date
         else:
-            return la_date
+            return today
 
     
     #New field
