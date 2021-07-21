@@ -21,11 +21,12 @@ class sale_subscription(models.Model):
         today = now.date()
         la_date = now.strftime("%m/%d/%Y")
 
-        debut_date = "2021-08-01"
+        debut_date = "01/08/2021"
         begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
+        ma_date = begin_date.strftime("%m/%d/%Y")
 
         if today <= begin_date:
-            return debut_date
+            return ma_date
         else:
             return la_date
 
