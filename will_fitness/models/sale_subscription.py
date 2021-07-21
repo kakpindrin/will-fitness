@@ -13,22 +13,22 @@ class sale_subscription(models.Model):
                                                          ('virement','VIREMENT'),
                                                          ('cheque','CHÈQUE')], default="especes",)
     
-    date_start = fields.Date(string='Date de début', default=lambda self: self._get_default_date())
+    # date_start = fields.Date(string='Date de début', default=lambda self: self._get_default_date())
 
-    @api.model
-    def _get_default_date(self):
-        now = datetime.now()
-        today = now.date()
-        la_date = now.strftime("%m/%d/%Y")
+    # @api.model
+    # def _get_default_date(self):
+    #     now = datetime.now()
+    #     today = now.date()
+    #     la_date = now.strftime("%m/%d/%Y")
 
-        debut_date = "01/08/2021"
-        begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
-        ma_date = begin_date.strftime("%m/%d/%Y")
+    #     debut_date = "01/08/2021"
+    #     begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
+    #     ma_date = begin_date.strftime("%m/%d/%Y")
 
-        if today <= begin_date:
-            return begin_date
-        else:
-            return today
+    #     if today <= begin_date:
+    #         return begin_date
+    #     else:
+    #         return today
 
     
     #New field

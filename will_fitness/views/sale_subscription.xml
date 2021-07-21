@@ -13,9 +13,9 @@
                 <field name="mode_reglement" />
             </field>
 
-            <field name="date_start" position="replace">
+            <!-- <field name="date_start" position="replace">
                 <field name="date_start" />
-            </field>
+            </field> -->
 
             <!-- <field name="description" position="before">
                 <field name="description_contrat" />
