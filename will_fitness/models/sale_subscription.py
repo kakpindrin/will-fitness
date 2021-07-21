@@ -21,7 +21,7 @@ class sale_subscription(models.Model):
         today = now.date()
         la_date = now.strftime("%m/%d/%Y")
 
-        debut_date = "01/08/2021"
+        debut_date = "2021-08-01"
         begin_date = datetime.strptime(debut_date, "%d/%m/%Y").date()
 
         if today <= begin_date:
