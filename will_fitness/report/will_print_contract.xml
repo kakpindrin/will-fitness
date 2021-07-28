@@ -207,10 +207,10 @@
                                     </td>
                                     <td>
                                         <t t-if="subscription.mode_reglement == 'virement' ">
-                                            <input type="checkbox" id="virement" checked="true" /> <label for="virement">VIREMENT <sm>(à partir d'un abonnement de 3 mois)</sm> </label>
+                                            <input type="checkbox" id="virement" checked="true" /> <label for="virement">VIREMENT <span style="font-size:8px;">(à partir d'un abonnement de 3 mois)</span> </label>
                                         </t>
                                         <t t-elif="subscription.mode_reglement != 'virement'">
-                                            <input type="checkbox" id="virement" /> <label for="virement">VIREMENT <sm>(à partir d'un abonnement de 3 mois)</sm> </label>
+                                            <input type="checkbox" id="virement" /> <label for="virement">VIREMENT <span style="font-size:8px;">(à partir d'un abonnement de 3 mois)</span> </label>
                                         </t>
                                     </td>
                                     <td>
