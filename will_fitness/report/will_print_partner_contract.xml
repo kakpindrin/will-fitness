@@ -54,6 +54,13 @@
                                     <t t-elif="line.product_id.default_code != 'ASAS' ">
                                         <p><input type="checkbox" id="asas" /> <label for="asas">SEMESTRIEL 280 000 F CFA</label></p>
                                     </t>
+                                    
+                                    <t t-if="line.product_id.default_code == 'ASAQ' ">
+                                        <p><input type="checkbox" id="asaq" checked="true" /> <label for="asaq">QUINZAINE 25 000 F CFA</label></p>
+                                    </t>
+                                    <t t-elif="line.product_id.default_code != 'ASAQ' ">
+                                        <p><input type="checkbox" id="asaq" /> <label for="asaq">QUINZAINE 25 000 F CFA</label></p>
+                                    </t>
                                 </td>
                                 <td>
                                     <t t-if="line.product_id.default_code == 'ASAT' ">
@@ -72,8 +79,45 @@
                                 </td>
                             </tr>
                         <!-- </table>
-
                         <table style="width:100%; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt"> -->
+
+
+
+
+
+                            <tr style="width:100%;" valign="center">
+                                <th colspan="2">ABONNEMENT ENTREPRISE</th>
+                            </tr>
+                            <tr style="width:100%;" valign="center">
+                                <td colspan="2">
+                                    <t t-if="line.product_id.default_code == 'AEM' ">
+                                        <p><input type="checkbox" id="aem" checked="true" /> <label for="aem">MENSUEL 45 000 F CFA</label></p>
+                                    </t>
+                                    <t t-elif="line.product_id.default_code != 'AEM' ">
+                                        <p><input type="checkbox" id="aem" /> <label for="aem">MENSUEL 45 000 F CFA</label></p>
+                                    </t>
+                                </td>
+                            </tr>
+
+                            <tr style="width:100%;" valign="center">
+                                <th colspan="2">ABONNEMENT PERSONNEL BAD</th>
+                            </tr>
+                            <tr style="width:100%;" valign="center">
+                                <td colspan="2">
+                                    <t t-if="line.product_id.default_code == 'AMPB' ">
+                                        <p><input type="checkbox" id="ampb" checked="true" /> <label for="ampb">MENSUEL 40 000 F CFA</label></p>
+                                    </t>
+                                    <t t-elif="line.product_id.default_code != 'AMPB' ">
+                                        <p><input type="checkbox" id="ampb" /> <label for="ampb">MENSUEL 40 000 F CFA</label></p>
+                                    </t>
+                                </td>
+                            </tr>
+
+
+
+
+
+
                             <tr style="width:100%;" valign="center">
                                 <th>ABONNEMENT SPORT +</th>
                                 <th>
@@ -119,6 +163,13 @@
                                     </t>
                                     <t t-elif="line.product_id.default_code != 'ASPA' ">
                                         <p><input type="checkbox" id="aspa" /> <label for="aspa">ANNUEL 1 300 000 F CFA</label></p>
+                                    </t>
+
+                                    <t t-if="line.product_id.default_code == 'ASPQ' ">
+                                        <p><input type="checkbox" id="aspq" checked="true" /> <label for="aspq">QUINZAINE 75 000 F CFA</label></p>
+                                    </t>
+                                    <t t-elif="line.product_id.default_code != 'ASPQ' ">
+                                        <p><input type="checkbox" id="aspq" /> <label for="aspq">QUINZAINE 75 000 F CFA</label></p>
                                     </t>
                                 </td>
                             </tr>
