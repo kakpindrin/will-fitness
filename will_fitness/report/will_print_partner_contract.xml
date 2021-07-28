@@ -248,7 +248,7 @@
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="col-md-6">
-                    <table style="width:100%; font-size:9px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt; padding:3pt;">
+                    <table style="width:100%; font-size:8px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt; padding:3pt;">
                         <tr style="width:100%;" valign="center">
                             <td>
                                 <p>Conditions générales de vente Will Fitness <br /></p>
