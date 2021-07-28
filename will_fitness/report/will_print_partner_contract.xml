@@ -86,29 +86,23 @@
 
 
                             <tr style="width:100%;" valign="center">
-                                <th colspan="2">ABONNEMENT ENTREPRISE</th>
+                                <th>ABONNEMENT SPECIAUX</th>
                             </tr>
                             <tr style="width:100%;" valign="center">
-                                <td colspan="2">
+                                <td>
                                     <t t-if="line.product_id.default_code == 'AEM' ">
-                                        <p><input type="checkbox" id="aem" checked="true" /> <label for="aem">MENSUEL 45 000 F CFA</label></p>
+                                        <p><input type="checkbox" id="aem" checked="true" /> <label for="aem">ABONNEMENT MENSUEL ENTREPRISE 45 000 F CFA</label></p>
                                     </t>
                                     <t t-elif="line.product_id.default_code != 'AEM' ">
-                                        <p><input type="checkbox" id="aem" /> <label for="aem">MENSUEL 45 000 F CFA</label></p>
+                                        <p><input type="checkbox" id="aem" /> <label for="aem">ABONNEMENT MENSUEL ENTREPRISE 45 000 F CFA</label></p>
                                     </t>
                                 </td>
-                            </tr>
-
-                            <tr style="width:100%;" valign="center">
-                                <th colspan="2">ABONNEMENT PERSONNEL BAD</th>
-                            </tr>
-                            <tr style="width:100%;" valign="center">
-                                <td colspan="2">
+                                <td>
                                     <t t-if="line.product_id.default_code == 'AMPB' ">
-                                        <p><input type="checkbox" id="ampb" checked="true" /> <label for="ampb">MENSUEL 40 000 F CFA</label></p>
+                                        <p><input type="checkbox" id="ampb" checked="true" /> <label for="ampb">ABONNEMENT MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
                                     </t>
                                     <t t-elif="line.product_id.default_code != 'AMPB' ">
-                                        <p><input type="checkbox" id="ampb" /> <label for="ampb">MENSUEL 40 000 F CFA</label></p>
+                                        <p><input type="checkbox" id="ampb" /> <label for="ampb">ABONNEMENT MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
                                     </t>
                                 </td>
                             </tr>
