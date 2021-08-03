@@ -206,7 +206,7 @@
                     </t>
 
                     
-                    <table style="width:100%; font-size:13px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt; padding:3pt;">
+                    <table style="width:100%; font-size:12px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt; padding:3pt;">
                         <!-- <caption style="align: top;">MODE DE RÈGLEMENT :</caption> -->
                         <tr><td colspan="4"><strong>MODE DE RÈGLEMENT :</strong></td></tr>
                         <tr style="width:100%;" valign="center">
