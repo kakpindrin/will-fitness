@@ -96,26 +96,26 @@
                                     <tr style="width:100%;" valign="center">
                                         <td>
                                             <t t-if="line.product_id.default_code == 'AEM' ">
-                                                <p><input type="checkbox" id="aem" checked="true" /> <label for="aem">ABONNEMENT MENSUEL ENTREPRISE 45 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="aem" checked="true" /> <label for="aem">MENSUEL ENTREPRISE 45 000 F CFA</label></p>
                                             </t>
                                             <t t-elif="line.product_id.default_code != 'AEM' ">
-                                                <p><input type="checkbox" id="aem" /> <label for="aem">ABONNEMENT MENSUEL ENTREPRISE 45 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="aem" /> <label for="aem">MENSUEL ENTREPRISE 45 000 F CFA</label></p>
                                             </t>
                                         </td>
                                         <td>
                                             <t t-if="line.product_id.default_code == 'AMPB' ">
-                                                <p><input type="checkbox" id="ampb" checked="true" /> <label for="ampb">ABONNEMENT MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="ampb" checked="true" /> <label for="ampb">MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
                                             </t>
                                             <t t-elif="line.product_id.default_code != 'AMPB' ">
-                                                <p><input type="checkbox" id="ampb" /> <label for="ampb">ABONNEMENT MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="ampb" /> <label for="ampb">MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
                                             </t>
                                         </td>
                                         <td>
                                             <t t-if="line.product_id.default_code == 'A2S' ">
-                                                <p><input type="checkbox" id="a2s" checked="true" /> <label for="ampb">ABONNEMENT QUINZAINE 35 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="a2s" checked="true" /> <label for="ampb">QUINZAINE 35 000 F CFA</label></p>
                                             </t>
                                             <t t-elif="line.product_id.default_code != 'A2S' ">
-                                                <p><input type="checkbox" id="a2s" /> <label for="a2s">ABONNEMENT QUINZAINE 35 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="a2s" /> <label for="a2s">QUINZAINE 35 000 F CFA</label></p>
                                             </t>
                                         </td>
                                     </tr>
@@ -123,10 +123,10 @@
                                     <tr style="width:100%;" valign="center">
                                         <td>
                                             <t t-if="line.product_id.default_code == 'ABEM' ">
-                                                <p><input type="checkbox" id="abem" checked="true" /> <label for="abem">ABONNEMENT MENSUEL ENFANT 30 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="abem" checked="true" /> <label for="abem">MENSUEL ENFANT 30 000 F CFA</label></p>
                                             </t>
                                             <t t-elif="line.product_id.default_code != 'ABEM' ">
-                                                <p><input type="checkbox" id="abem" /> <label for="abem">ABONNEMENT MENSUEL ENFANT 30 000 F CFA</label></p>
+                                                <p><input type="checkbox" id="abem" /> <label for="abem">MENSUEL ENFANT 30 000 F CFA</label></p>
                                             </t>
                                         </td>
                                         <td>
