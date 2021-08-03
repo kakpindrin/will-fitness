@@ -110,6 +110,41 @@
                                                 <p><input type="checkbox" id="ampb" /> <label for="ampb">ABONNEMENT MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
                                             </t>
                                         </td>
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'A2S' ">
+                                                <p><input type="checkbox" id="a2s" checked="true" /> <label for="ampb">ABONNEMENT QUINZAINE 35 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'A2S' ">
+                                                <p><input type="checkbox" id="a2s" /> <label for="a2s">ABONNEMENT QUINZAINE 35 000 F CFA</label></p>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr style="width:100%;" valign="center">
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'ABEM' ">
+                                                <p><input type="checkbox" id="abem" checked="true" /> <label for="abem">ABONNEMENT MENSUEL ENFANT 30 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'ABEM' ">
+                                                <p><input type="checkbox" id="abem" /> <label for="abem">ABONNEMENT MENSUEL ENFANT 30 000 F CFA</label></p>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'PT' ">
+                                                <p><input type="checkbox" id="pt" checked="true" /> <label for="pt">PERSONAL TRAINING (1 H) 25 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'PT' ">
+                                                <p><input type="checkbox" id="pt" /> <label for="pt">PERSONAL TRAINING (1 H) 25 000 F CFA</label></p>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="line.product_id.default_code == 'PT10' ">
+                                                <p><input type="checkbox" id="pt10" checked="true" /> <label for="pt10">PERSONAL TRAINING (10 séances) 200 000 F CFA</label></p>
+                                            </t>
+                                            <t t-elif="line.product_id.default_code != 'PT10' ">
+                                                <p><input type="checkbox" id="pt10" /> <label for="pt10">PERSONAL TRAINING (10 séances) 200 000 F CFA</label></p>
+                                            </t>
+                                        </td>
                                     </tr>
 
 
