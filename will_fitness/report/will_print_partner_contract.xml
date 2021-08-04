@@ -44,38 +44,38 @@
                                     <t t-if="line.product_id.default_code == 'ASAM' ">
                                         <p><input type="checkbox" id="asam" checked="true" /> <label for="asam">MENSUEL 50 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASAM' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASAM' ">
                                         <p><input type="checkbox" id="asam" /> <label for="asam">MENSUEL 50 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
 
                                     <t t-if="line.product_id.default_code == 'ASAS' ">
                                         <p><input type="checkbox" id="asas" checked="true" /> <label for="asas">SEMESTRIEL 280 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASAS' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASAS' ">
                                         <p><input type="checkbox" id="asas" /> <label for="asas">SEMESTRIEL 280 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                     
                                     <t t-if="line.product_id.default_code == 'ASAQ' ">
                                         <p><input type="checkbox" id="asaq" checked="true" /> <label for="asaq">QUINZAINE 25 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASAQ' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASAQ' ">
                                         <p><input type="checkbox" id="asaq" /> <label for="asaq">QUINZAINE 25 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                                 <td>
                                     <t t-if="line.product_id.default_code == 'ASAT' ">
                                         <p><input type="checkbox" id="asat" checked="true" /> <label for="asat">TRIMESTRIEL 140 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASAT' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASAT' ">
                                         <p><input type="checkbox" id="asat" /> <label for="asat">TRIMESTRIEL 140 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
 
                                     <t t-if="line.product_id.default_code == 'ASAA' ">
                                         <p><input type="checkbox" id="asaa" checked="true" /> <label for="asaa">ANNUEL 500 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASAA' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASAA' ">
                                         <p><input type="checkbox" id="asaa" /> <label for="asaa">ANNUEL 500 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                             </tr>
                         <!-- </table>
@@ -93,25 +93,25 @@
                                     <t t-if="line.product_id.default_code == 'AEM' ">
                                         <p><input type="checkbox" id="aem" checked="true" /> <label for="aem">MENSUEL ENTREPRISE 45 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'AEM' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'AEM' ">
                                         <p><input type="checkbox" id="aem" /> <label for="aem">MENSUEL ENTREPRISE 45 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                                 <td>
                                     <t t-if="line.product_id.default_code == 'AMPB' ">
                                         <p><input type="checkbox" id="ampb" checked="true" /> <label for="ampb">MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'AMPB' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'AMPB' ">
                                         <p><input type="checkbox" id="ampb" /> <label for="ampb">MENSUEL PERSONNEL BAD 40 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                                 <td>
                                     <t t-if="line.product_id.default_code == 'A2S' ">
                                         <p><input type="checkbox" id="a2s" checked="true" /> <label for="ampb">QUINZAINE 35 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'A2S' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'A2S' ">
                                         <p><input type="checkbox" id="a2s" /> <label for="a2s">QUINZAINE 35 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                             </tr>
 
@@ -120,25 +120,25 @@
                                     <t t-if="line.product_id.default_code == 'ABEM' ">
                                         <p><input type="checkbox" id="abem" checked="true" /> <label for="abem">MENSUEL ENFANT 30 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ABEM' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ABEM' ">
                                         <p><input type="checkbox" id="abem" /> <label for="abem">MENSUEL ENFANT 30 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                                 <td>
                                     <t t-if="line.product_id.default_code == 'PT' ">
                                         <p><input type="checkbox" id="pt" checked="true" /> <label for="pt">PERSONAL TRAINING (1 H) 25 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'PT' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'PT' ">
                                         <p><input type="checkbox" id="pt" /> <label for="pt">PERSONAL TRAINING (1 H) 25 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                                 <td>
                                     <t t-if="line.product_id.default_code == 'PT10' ">
                                         <p><input type="checkbox" id="pt10" checked="true" /> <label for="pt10">PERSONAL TRAINING (10 séances) 200 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'PT10' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'PT10' ">
                                         <p><input type="checkbox" id="pt10" /> <label for="pt10">PERSONAL TRAINING (10 séances) 200 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                             </tr>
 
@@ -168,38 +168,38 @@
                                     <t t-if="line.product_id.default_code == 'ASPM' ">
                                         <p><input type="checkbox" id="aspm" checked="true" /> <label for="aspm">MENSUEL 130 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASPM' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASPM' ">
                                         <p><input type="checkbox" id="aspm" /> <label for="aspm">MENSUEL 130 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                     
                                     <t t-if="line.product_id.default_code == 'ASPT' ">
                                         <p><input type="checkbox" id="aspt" checked="true" /> <label for="aspt">TRIMESTRIEL 350 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASPT' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASPT' ">
                                         <p><input type="checkbox" id="aspt" /> <label for="aspt">TRIMESTRIEL 350 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
 
                                     <t t-if="line.product_id.default_code == 'ASPS' ">
                                         <p><input type="checkbox" id="asps" checked="true" /> <label for="asps">SEMESTRIEL 700 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASPS' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASPS' ">
                                         <p><input type="checkbox" id="asps" /> <label for="asps">SEMESTRIEL 700 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                                 <td>
                                     <t t-if="line.product_id.default_code == 'ASPA' ">
                                         <p><input type="checkbox" id="aspa" checked="true" /> <label for="aspa">ANNUEL 1 300 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASPA' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASPA' ">
                                         <p><input type="checkbox" id="aspa" /> <label for="aspa">ANNUEL 1 300 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
 
                                     <t t-if="line.product_id.default_code == 'ASPQ' ">
                                         <p><input type="checkbox" id="aspq" checked="true" /> <label for="aspq">QUINZAINE 75 000 F CFA</label></p>
                                     </t>
-                                    <t t-elif="line.product_id.default_code != 'ASPQ' ">
+                                    <!-- <t t-elif="line.product_id.default_code != 'ASPQ' ">
                                         <p><input type="checkbox" id="aspq" /> <label for="aspq">QUINZAINE 75 000 F CFA</label></p>
-                                    </t>
+                                    </t> -->
                                 </td>
                             </tr>
                         </table>
