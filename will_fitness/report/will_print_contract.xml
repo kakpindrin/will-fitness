@@ -231,33 +231,33 @@
                                         <t t-if="subscription.mode_reglement == 'especes' ">
                                             <input type="checkbox" id="especes" checked="true" /> <label for="especes">ESPÈCES </label>
                                         </t>
-                                        <!-- <t t-elif="subscription.mode_reglement != 'especes'">
+                                        <t t-elif="subscription.mode_reglement != 'especes'">
                                             <input type="checkbox" id="especes" /> <label for="especes">ESPÈCES </label>
-                                        </t> -->
+                                        </t>
                                     </td>
                                     <td>
                                         <t t-if="subscription.mode_reglement == 'cartebancaire' ">
                                             <input type="checkbox" id="cartebancaire" checked="true" /> <label for="cartebancaire">CARTE BANCAIRE</label>
                                         </t>
-                                        <!-- <t t-elif="subscription.mode_reglement != 'cartebancaire'">
+                                        <t t-elif="subscription.mode_reglement != 'cartebancaire'">
                                             <input type="checkbox" id="cartebancaire" /> <label for="cartebancaire">CARTE BANCAIRE</label>
-                                        </t> -->
+                                        </t>
                                     </td>
                                     <td>
                                         <t t-if="subscription.mode_reglement == 'virement' ">
                                             <input type="checkbox" id="virement" checked="true" /> <label for="virement">VIREMENT <span style="font-size:10px;">(à partir d'un abonnement de 3 mois)</span> </label>
                                         </t>
-                                        <!-- <t t-elif="subscription.mode_reglement != 'virement'">
+                                        <t t-elif="subscription.mode_reglement != 'virement'">
                                             <input type="checkbox" id="virement" /> <label for="virement">VIREMENT <span style="font-size:10px;">(à partir d'un abonnement de 3 mois)</span> </label>
-                                        </t> -->
+                                        </t>
                                     </td>
                                     <td>
                                         <t t-if="subscription.mode_reglement == 'cheque'">
                                             <input type="checkbox" id="cheque" checked="true" /> <label for="cheque">CHÈQUE <span style="font-size:10px;">(à l'ordre de WILL FITNESS)</span></label>
                                         </t>
-                                        <!-- <t t-elif="subscription.mode_reglement != 'cheque'">
+                                        <t t-elif="subscription.mode_reglement != 'cheque'">
                                             <input type="checkbox" id="cheque" /> <label for="cheque">CHÈQUE <span style="font-size:10px;">(à l'ordre de WILL FITNESS)</span></label>
-                                        </t> -->
+                                        </t>
                                     </td>
                                 </tr>
                                 <tr style="width:100%;" valign="center">
