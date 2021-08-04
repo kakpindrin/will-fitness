@@ -36,7 +36,7 @@
                         <t t-foreach="impress.subscription_ids" t-as="subscription">
                             
                             <t t-foreach="subscription.recurring_invoice_line_ids" t-as="line">
-                                <table style="width:100%; font-size:12px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt; padding:3pt;">
+                                <table style="width:100%; font-size:14px; height:100%; border: 1pt solid black; border-collapse:separate; border-radius:8pt; margin:5pt; padding:3pt;">
                                     <tr><td colspan="2"><strong>Formule choisie :</strong></td></tr>
                                     <t t-if="line.product_id.default_code == 'ASAM' or line.product_id.default_code == 'ASAS' or line.product_id.default_code == 'ASAQ' or line.product_id.default_code == 'ASAT' or line.product_id.default_code == 'ASAA'">
                                         <tr style="width:100%;" valign="center">
@@ -289,9 +289,13 @@
                                     <td>
                                         <p><strong>SIGNATURE CLIENT :</strong></p>
                                         <p><br /></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
                                     </td>
                                     <td>
                                         <p><strong>DATE :</strong></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
                                         <p><br /></p>
                                     </td>
                                 </tr>
