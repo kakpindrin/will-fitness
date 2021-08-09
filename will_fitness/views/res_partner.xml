@@ -54,7 +54,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.res_partner_kanban_view" />
         <field name="arch" type="xml">
-            <xpath expr="//strong//field[@name=display_name]" position="after">
+            <xpath expr="//strong" position="inside">
                 <field name="prenom"/>
             </xpath>
         </field>
