@@ -44,7 +44,7 @@
         <field name="inherit_id" ref="base.view_partner_tree" />
         <field name="arch" type="xml">
             <field name="display_name" position="after">
-                <field name="prenom" attrs="{'invisible': [('company_type','!=','person')]}"/>
+                <field name="prenom" />
             </field>
         </field>
     </record>
@@ -55,7 +55,7 @@
         <field name="inherit_id" ref="base.res_partner_kanban_view" />
         <field name="arch" type="xml">
             <field name="display_name" position="after">
-                <field name="prenom" attrs="{'invisible': [('company_type','!=','person')]}"/>
+                <field name="prenom"/>
             </field>
         </field>
     </record>
