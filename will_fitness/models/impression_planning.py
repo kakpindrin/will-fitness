@@ -36,7 +36,7 @@ class will_fitness_planning(models.Model):
             if len(subs_states) > 0:
                 for any_sub in subscriptions:
                     now = datetime.now()
-                    if any_sub.recurring_next_date < now:
+                    if any_sub.recurring_next_date < now.date():
                         any_sub.write({
                             'stage_id': subs_states[0].id
                         })
