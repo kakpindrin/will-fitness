@@ -35,6 +35,20 @@ class will_fitness_planning(models.Model):
             'state': 'new'
         })
 
+    def close_subscription(self):
+        subscription_domain = []
+        subscriptions = self.env['sale.subscription'].search(subscription_domain, order='id desc')
+        if len(subscriptions) > 0:
+            subs_state_domain = [('category','=','closed'),]
+            subs_states = self.env['sale.subscription.stage'].search(subs_state_domain, order='id desc')
+            if len(subs_states) > 0:
+                for any_sub in subscriptions:
+                    now = datetime.now()
+                    if any_sub.recurring_next_date < now:
+                        any_sub.write({
+                            'stage_id': subs_states[0].id
+                        })
+
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
