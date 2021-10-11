@@ -34,6 +34,7 @@ class res_partner(models.Model):
     #             'subscription_state': True
     #         }) 
     
+    
 
     #THINK GOOD
     def generate_random_barcode(self):
