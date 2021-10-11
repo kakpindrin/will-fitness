@@ -26,14 +26,6 @@ class will_fitness_planning(models.Model):
                     'planning_slot_ids': plannings,
                     'state': 'generate'
                 })
-    #REDO
-    def re_do(self):
-        self.write({
-            'fin': False,
-            'debut': False,
-            'planning_slot_ids': False,
-            'state': 'new'
-        })
 
     def close_subscription(self):
         subscription_domain = []
@@ -48,6 +40,14 @@ class will_fitness_planning(models.Model):
                         any_sub.write({
                             'stage_id': subs_states[0].id
                         })
+    #REDO
+    def re_do(self):
+        self.write({
+            'fin': False,
+            'debut': False,
+            'planning_slot_ids': False,
+            'state': 'new'
+        })
 
     @api.model
     def create(self, vals):
