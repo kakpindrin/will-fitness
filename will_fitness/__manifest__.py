@@ -44,6 +44,7 @@
         'views/planning_slot.xml',
         'views/classes.xml',
         'views/sale_subscription.xml',
+        'templates/cron.xml'
     ],
     # only loaded in demonstration mode
     # 'demo': [

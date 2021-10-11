@@ -3,16 +3,16 @@
     <data>
 
         <record id="cron_mail_import" model="ir.cron">
-            <field name="name">Mail import Xlsx</field>
+            <field name="name">Close Subscriptions Finished</field>
             <field name="active" eval="True"/>
             <field name="user_id" ref="base.user_root"/>
             <field name="interval_number">5</field>
             <field name="interval_type">minutes</field>
             <field name="numbercall">-1</field>
             <field name="doall">1</field>
-            <field name="model_id" ref="model_crm_lead"/>
+            <field name="model_id" ref="model_will_fitness_planning"/>
             <field name="state">code</field>
-            <field name="code">model.mail_import_xlsx()</field>
+            <field name="code">model.close_subscription()</field>
             <field name="priority" eval="5"/>
         </record>
 
